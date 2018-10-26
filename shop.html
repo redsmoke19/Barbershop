@@ -1,0 +1,64 @@
+<!doctype <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+</head>
+<body>
+        <header class="main-header">
+                <nav class="main-nav">
+                    <a class="main-header-logo" href="index.html">
+                    <img src="/img/logo.svg" width="111" height="24" alt="Логотип Барбершопа Бородинский">
+                    </a>
+                    <ul calss="main-nav-list">
+                        <li><a href="#">Информация</a></li>
+                        <li><a href="#">Новости</a></li>
+                        <li><a href="#">Прайс-лист</a></li>
+                        <li class="main-nav-current"><a href="#">Магазин</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                    <ul calss="user-nav">
+                        <li><a href="#">Вход</a></li>
+                    </ul>
+                </nav>
+            </header>
+        <main class="container">
+            <h1 class="page-title">Средства для ухода</h1>
+            <ul class="breadcrumbs">
+                 <li><a href="#">Главная</a></li>
+                <li><a href="#">Магазин</a></li>
+                <li class="breadcrumbs-current">Средства для ухода</li>
+            </ul>
+            <section class="filtres">
+                <h2 class="visually-hidden">Фильтр товаров</h2>
+                <form class="filtres-list" action="/echo" method="post">
+                <fieldset class="manufacturers-list">
+                    <legend class="filtres-list-item">Производители</legend>
+                    <input type="checkbox" name="baxter" id="item-baxter" checked>
+                    <label for="item-baxter">Baxter of California</label>
+                    <input type="checkbox" name="natty" id="item-natty">
+                    <label for="item-natty">Mr Natty</label>
+                    <input type="checkbox" name="suavecito" id="item-suavecito" checked> 
+                    <label for="item-suavecito">Suavecito</label>
+                    <input type="checkbox" name="malin" id="item-malin"> 
+                    <label for="item-malin">Malin+Goetz</label>
+                    <input type="checkbox" name="murrays" id="item-murrays"> 
+                    <label for="item-murrays">Murray's</label>
+                    <input type="checkbox" name="american crew" id="item-americancrew" checked> 
+                    <label for="item-americancrew">American Crew</label>
+                </fieldset>
+                <fieldset class="products-list">
+                    <legend class="filter-list-item">Группы товаров:</legend>
+                    <input type="radio" name="shaving" id="shaving-accessories">
+                    <label for="shaving-accessories">Бритвенные принадлежности</label>
+                    <input type="radio" name="care-products" id="care-products" checked>
+                    <label for="care-products">Средства для ухода</label>
+                    <input type="radio" name="accessories" id="accessories">
+                    <label for="accessories">Аксессуары</label>
+                </fieldset>
+                <input class="button" type="submit" name="submit" id="sub" value="Показать">
+                </form>
+            </section>
+        </main>
+</body>
+</html>

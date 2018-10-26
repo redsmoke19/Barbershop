@@ -1,0 +1,127 @@
+<!DOCTYPE <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>Барбершоп "Бородинский"</title>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-nav">
+            <a class="main-header-logo">
+            <img src="#" width="368" height="153" alt="Логотип Барбершопа Бородинский">
+            </a>
+            <ul calss="main-nav-list">
+                <li><a href="#">Информация</a></li>
+                <li><a href="#">Новости</a></li>
+                <li><a href="#">Прайс-лист</a></li>
+                <li><a href="#">Магазин</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+            <ul calss="user-nav">
+                <li><a href="#">Вход</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <h1 class="visually-hidden">Барбершоп "Бородинский"</h1>
+        <section class="advantage">
+            <h2 class="visually-hidden">Наши преимущества</h2>
+            <ul class="advantage-list">
+                <li class="advantage-item">
+                    <h3>Быстро</h3>
+                    <p>Мы делаем свою работу быстро! Два часа пролетят незаметно и вы - счастливый обладатель стильной стрижки - минутки!</p>
+                </li>
+                <li class="advantage-item">
+                   <h3>Круто</h3>
+                   <p>Забудьте, как вы стриглись раньше. Мы сделаем из вас звезду футбола или кино! Во всяком случае внешне</p> 
+                </li>
+                <li class="advantage-item">
+                    <h3>Дорого</h3>
+                    <p>Наши мастера - профессионали своего дела и не могут стоить дешего. К тому же, разве цена не дает определенный статус?</p>
+                </li>
+            </ul>
+        </section>
+        <section class="news">
+            <h2 class="visually">Новости</h2>
+            <ul class="news-list">
+                <li class="news-item">
+                    <p>Нам наконец завезли ягермайстер! Теперь вы можете пропустить стаканчик во время стрижки</p>
+                    <time datatime="2018-10-25">25 октября</time>
+                </li>
+                <li class="news-item">
+                    <p>В нашей команде попролнение, Борис "Бритва" стригунец. Обладатель множества титулов и наград пополнил наши стройные ряды</p>
+                    <time datatime="2018-10-24">24 октября</time>
+                </li>
+            </ul>
+         <a class="button" href="#">Все Новости</a>
+        </section>
+        <section class="gallery">
+            <h2>Фотогалерея</h2>
+            <figure class="gallery-content">
+                <a href="#"><img src="img/studio.jpg" width="286" height="164" alt="Интерьев"></a>
+            </figure>
+            <span class="button gallery-button gallery-button-back">Назад</span>
+            <span class="button gallery-button gallery-button-next">Вперед</span>
+        </section>
+        <section class="contact-info">
+            <h2>Контактная информация</h2>
+            <p>
+                Барбершоп "Бородинский" <br>
+                Адрес: г. Санкт-Петербург, Б. Конюшенная, д. 19/8 <br>
+                Телефон: +7 (495) 666-02-66
+            </p>
+            <p>
+                Время работы: <br>
+                ПН-ПТ: с 10:00 до 22:00
+                СБ-ВС: с 10:00 до 19:00
+            </p>
+            <a class="button way" href="#">Как проехать</a>
+            <a class="button fitback" href="">Обратная связь</a>
+        </section>
+        <section class="haircut">
+            <h2>Записаться</h2>
+            <p class="haircut-info">Укажите желаемую дату и время и мы свяжемся с Вами для подтверждения брони</p>
+            <!-- Место для формы-->
+            <form class="haircut-form" action="/echo" method="post">
+                <label for="haircut-date">Дата</label>
+                <input id="haircut-date" type="date" name="haircut-date" value="08.10.2017">
+                <label for="haircut-time">Время</label>
+                <input id="haircut-time" type="time" name="haircut-time" value="10:00">
+                <label for="haircut-youname">Ваше Имя</label>
+                <input id="haircut-youname" type="text" value="Борода">
+                <label for="haircut-phone">Телефон</label>
+                <input id="haircut-phone" type="tel" name="haircut-phone" value="+7 123 456-78-90" pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}">
+                <input type="submit" value="Отправить">
+            </form>
+        </section>
+    </main> 
+    <footer class="main-footer">
+        <p class="footer-contacts">
+            Барбершоп "Бородинский" <br>
+            Адрес: г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 <br>
+            <a class="footer-map" href="#">Как нас найти?</a> <br>
+            Телефон: +7 (495) 666-02-66
+        </p>
+        <div class="footer-social">
+            <b>Давайте дружить</b>
+            <a class="social-button vk" href="#">Вконтакте</a>
+            <a class="social-button fb" href="#">FaceBook</a>
+            <a class="social-button inst" href="#">Instagramm</a>
+        </div>
+        <p class="footer-copyright">
+            <b>Разработано</b>
+            <a class="button" href="https://htmlacademy.ru">HTML Academy</a>
+        </p>
+    </footer>   
+    <section class="modal modal-login">
+        <h2>Личный кабинет</h2>
+        <p>Введите свой логин и пароль</p>
+        <!-- Здесь будет форма логина -->
+        <span class="modal-close">x</span>
+    </section>
+    <section class="modal modal-map">
+        <h2 class="visually-hidden">Как до нас добраться</h2>
+        <span class="modal-close"></span>
+    </section>
+</body>
+</html>
