@@ -3,10 +3,13 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Барбершоп "Бородинский"</title>
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/normalize.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=cyrillic" rel="stylesheet">
 </head>
-<body>
+<body class="inner-page">
 	<header class="main-header">
-		<nav class="main-nav">
+		<nav class="main-navigation">
 			<a class="main-header-logo" href="index.html">
 				<img src="img/sub-logo.svg" width="111" height="24" alt="Логотип Барбершопа Бородинский">
 			</a>
@@ -14,10 +17,10 @@
 				<li><a href="#">Информация</a></li>
 				<li><a href="#">Новости</a></li>
 				<li><a href="price.html">Прайс-лист</a></li>
-				<li class="main-nav-current"><a href="#">Магазин</a></li>
+				<li class="main-nav-current"><a href="shop.html">Магазин</a></li>
 				<li><a href="#">Контакты</a></li>
 			</ul>
-			<ul class="user-nav">
+			<ul class="user-nav-list">
 				<li class="login-link">
 					<a class="login-link" href="login.html">Вход</a>
 				</li>
@@ -31,13 +34,13 @@
 				<a href="index.html">Главная</a>
 			</li>
 			<li>
-				<a href="#">Магазин</a>
+				<a href="shop.html">Магазин</a>
 			</li>
 			<li>
 				<a href="shop.html">Средства для ухода</a>
 			</li>
 			<li class="breadcrumbs-current">
-				<a>Набор для путешествия "Baxter of California"</a>
+				Набор для путешествия "Baxter of California"
 			</li>
 		</ul>
 		<section class="product-photo">
@@ -53,21 +56,23 @@
 					<img src="img/product-small-2.jpg" width="140" height="149" alt="Фото в анфас">
 				</li>
 				<li>
-					<img src="img/product-small-3.jpg" width="140" height="149" alt="Фото отдельной части"><
-					/li>
+					<img src="img/product-small-3.jpg" width="140" height="149" alt="Фото отдельной части">
+				</li>
 			</ul>
 		</section>
-		<section>
+		<section class="product-info">
 			<h2 class="visually-hidden">Описание товара</h2>
-			<p class="product-available">Есть в наличии</p>
-			<p class="product-article">Артикул: Dexter-AE</p>
+			<div class="product-description">
+				<p class="product-available">Есть в наличии</p>
+				<p class="product-article">Артикул: Dexter-AE</p>
+			</div>
 			<p class="product-text">Travel Kit – необходимый аксессуар во время любого путешествия. В аккуратной кожаной сумке находится все, что нужно для бритья и ухода за кожей во время рабочей поездки или отдыха: средство для умывания, увлажняющий крем, крем для бритья, крем после бритья, шампунь. Набор также может стать отличным подарком.</p>
 			<p class="catalog-item-price">
 				<b>2900 &#8381;</b>
 				<a class="button" href="#">Купить</a>
 			</p>
 			<h3>В набор входят:</h3>
-			<ul class="product-composition-list">
+			<ul>
 				<li>Средство для умывания (50мл)</li>
 				<li>Увлжняющий крем (50мл)</li>
 				<li>Крем для бриться (50мл)</li>
