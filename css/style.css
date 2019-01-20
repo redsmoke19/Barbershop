@@ -44,9 +44,34 @@ body {
     margin-left: auto;
 }
 
-a { text-decoration: none; }
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
 
 .button {
+    display: inline-block;
+    padding: 10px 30px;
+    margin-right: 16px;
     font: inherit;
     text-align: center;
     color: #ffffff;
@@ -60,6 +85,13 @@ a { text-decoration: none; }
 .button:focus,
 .button:active {
     background-color: #663d15;
+}
+
+.button.disabled,
+.button:disabled {
+    cursor: default;
+    opacity: 0.5;
+    background-color: #000000;
 }
 
 .main-header {
@@ -96,10 +128,11 @@ a { text-decoration: none; }
     font-size: 16px;
     line-height: 20px;
     color: #ffffff;
-    background-color: #000000;
 }
 
 .main-nav-list {
+    display: flex;
+    flex-wrap: wrap;
     width: 620px;
     margin: 0;
     padding: 0;
@@ -107,14 +140,40 @@ a { text-decoration: none; }
 }
 
 .user-nav-list {
-    width: 140px;
+    display: flex;
+    max-width: 140px;
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
+.user-nav-list .login-link {
+    position: relative;
+    padding-left: 50px;
+}
+
+.login-link::before {
+    position: absolute;
+    top: 27px;
+    left: 24px;
+    content: "";
+    width: 16px;
+    height: 18px;
+    background: url("../img/login.svg") no-repeat 0 0;
+    opacity: 0.3;
+}
+
+.login-link:hover::before,
+.login-link:focus::before,
+.login-link:active::before {
+    opacity: 1;
+}
+
 .main-nav-list a,
 .user-nav-list a {
+    display: block;
+    padding: 25px 20px;
+    vertical-align: middle;
     color: #ffffff;
 }
 
@@ -143,8 +202,27 @@ a { text-decoration: none; }
 }
 
 .advantage-item h3 {
+    position: relative;
+    margin: 0;
+    margin-bottom: 60px;
     font-size: 30px;
     line-height: 42px;
+}
+
+.advantage-item h3::after {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    margin-left: -10px;
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    background-color: #ffffff;
+}
+
+.advantage-item p {
+    margin: 0 10px;
 }
 
 .index-column {
@@ -156,12 +234,16 @@ a { text-decoration: none; }
     color: #000000;
 
     background-color: #f8f5f2;
-    background-image: url("../img/pattern-light.jpg");
-    background-position: 0 0;
-    background-repeat: repeat;
+    background-image:
+            url("../img/vertical-line.png"),
+            url("../img/pattern-light.jpg");
+    background-position: center, 0 0;
+    background-repeat: no-repeat, repeat;
 }
 
 .index-column h2 {
+    margin: 0;
+    margin-bottom: 25px;
     font-size: 30px;
     line-height: 42px;
 }
@@ -175,27 +257,97 @@ a { text-decoration: none; }
 }
 
 .news-list {
+    margin: 0;
+    margin-bottom: 25px;
+    padding: 0;
     list-style: none;
+}
+
+.news-item {
+    margin-bottom: 25px;
+}
+
+.news-item p {
+    margin: 0;
 }
 
 .news-item time {
     text-transform: none;
 }
 
+.gallery-container {
+    position: relative;
+    height: 260px;
+}
+
 .gallery-content {
+    height: 164px;
+    margin: 0;
     background-color: #e5e5e5;
     border: 7px solid #ffffff;
+}
+
+.gallery-content img {
+    width: 286px;
+    height: 164px;
+}
+
+.gallery-button {
+    position: absolute;
+    bottom: 0;
+    box-sizing: border-box;
+    width: 140px;
+    margin: 0;
+}
+
+.gallery-button-back {
+    left: 0;
+}
+
+.gallery-button-next {
+    right: 0;
 }
 
 .contact-info {
     width: 380px;
 }
 
+.contact-info p {
+    margin: 0;
+    margin-bottom: 25px;
+}
+
 .appointment {
     width: 300px;
 }
 
+.appointment-info {
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.appointment-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.appointment-item {
+    width: 140px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.appointment-item label {
+    display: block;
+    margin-bottom: 9px;
+    margin-left: 15px;
+}
+
 .appointment-item input {
+    box-sizing: border-box;
+    width: 140px;
+    padding: 8px 15px 7px 8px;
     font: inherit;
     background-color: transparent;
     border: 2px solid #000000;
@@ -203,6 +355,47 @@ a { text-decoration: none; }
 
 .appointment-item input:focus {
     border-color: #663d15;
+}
+
+.appointment-form .button {
+    margin-top: 10px;
+    margin-right: 0;
+    display: block;
+    width: 100%;
+}
+
+.footer-social b {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.footer-social ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0;
+    width: 141px;
+    list-style: none;
+}
+
+.social-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 43px;
+    height: 43px;
+    background-color: #000000;
+}
+
+.social-button:hover,
+.social-button:focus {
+    background-color: #ffffff;
+}
+
+.social-button:hover path,
+.social-button:focus path {
+    fill: #000000;
 }
 
 .page-title {
@@ -214,10 +407,33 @@ a { text-decoration: none; }
 }
 
 .breadcrumbs {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
     margin: 0;
     padding: 0;
     margin-bottom: 50px;
     list-style: none;
+}
+
+.breadcrumbs li {
+    position: relative;
+    margin-right: 42px;
+}
+
+.breadcrumbs li:last-child {
+    margin-right: 0;
+}
+
+.breadcrumbs li::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    top: 7px;
+    right: -25px;
+    background-color: #000000;
+    transform: rotate(45deg);
 }
 
 .breadcrumbs a {
@@ -233,6 +449,10 @@ a { text-decoration: none; }
     color: #aba9a7;
 }
 
+.breadcrumbs-current::after {
+    display: none;
+}
+
 .catalog-columns {
     display: flex;
     justify-content: space-between;
@@ -244,16 +464,80 @@ a { text-decoration: none; }
 
 .filter fieldset {
     border: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+.filter fieldset:first-child {
+    margin-bottom: 35px;
 }
 
 .filter legend {
+    margin-bottom: 26px;
     font-size: 24px;
     line-height: 30px;
 }
 
 .filter ul {
+    margin: 0;
+    padding: 0;
     list-style: none;
     line-height: 18px;
+}
+
+.filter-option {
+    margin-bottom: 19px;
+    padding-left: 45px;
+}
+
+.filter-option label {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    user-select: none;
+}
+
+.filter-input-checkbox + label::before {
+    content: "";
+    position: absolute;
+    left: -42px;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #000000;
+}
+
+.filter-input-checkbox:checked + label::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: -38px;
+    width: 12px;
+    height: 12px;
+    background: url("../img/cross.svg") no-repeat 0 0;
+}
+
+.filter-input-radio + label::before {
+    content: "";
+    position: absolute;
+    left: -42px;
+    top: -1px;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #000000;
+    border-radius: 50%;
+}
+
+.filter-input-radio:checked + label::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: -36px;
+    width: 8px;
+    height: 8px;
+    background-color: #000000;
+    border-radius: 50%;
 }
 
 .filter-input:hover + label,
@@ -296,37 +580,69 @@ a { text-decoration: none; }
 }
 
 .catalog-item a {
+    display: flex;
+    flex-direction: column;
     color: #000000;
 }
 
 .catalog-item h3 {
+    margin: 17px 15px 12px 16px;
+    order: 1;
     font-size: 14px;
     line-height: 18px;
 }
 
 .catalog-category {
+    display: block;
     text-transform: none;
 }
 
+.catalog-item-image {
+    width: 220px;
+    height: 165px;
+    margin: 0;
+}
+
+.product-info .catalog-item-price {
+    display: flex;
+    margin-bottom: 63px;
+}
+
 .catalog-item-price b {
+    width: 112px;
+    padding: 13px 36px 11px 36px;
     font-size: 14px;
-    line-height: 18px;
+    line-height: 20px;
     text-align: center;
     background-color: #e5e5e5;
+    box-sizing: border-box;
 }
 
 .catalog-item-price .button {
-    color: #ffffff;
-    line-height: 18px;
+    padding-left: 17px;
+    padding-right: 17px;
+    margin-right: 0;
 }
 
 .pagination-list {
+    display: flex;
+    flex-wrap: wrap;
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
+.pagination-item {
+    margin-right: 7px;
+}
+
+.pagination-item:last-child {
+    margin-right: 0;
+}
+
 .pagination-item a {
+    display: block;
+    padding: 10px 19px;
     color: #ffffff;
     background-color: #000000;
 }
@@ -354,20 +670,49 @@ a { text-decoration: none; }
 }
 
 .product-photo-list {
+    display: flex;
+    margin: 0;
+    padding: 0;
     list-style: none;
 }
 
 .product-photo-list li {
+    width: 140px;
+    height: 149px;
+    margin-right: 20px;
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
 }
 
+.product-photo-list li:nth-child(3n) {
+    margin-right: 0;
+}
+
 .product-photo-full {
+    width: 460px;
+    height: 498px;
+    margin: 0;
+    margin-bottom: 20px;
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+}
+
+.product-description {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+    margin-bottom: 30px;
+}
+
+.product-description p {
+    width: 200px;
 }
 
 .product-article {
     text-align: right;
     color: #aeaeae;
+}
+
+.product-info .product-text {
+    margin-bottom: 35px;
 }
 
 .catalog-item-price b {
@@ -416,16 +761,41 @@ a { text-decoration: none; }
 }
 
 .product-info {
+    padding-top: 23px;
     width: 390px;
 }
 
+.product-info p {
+    margin: 0;
+}
+
 .product-info h3 {
+    margin: 0;
+    margin-bottom: 27px;
     font-size: 24px;
     line-height: 30px;
 }
 
 .product-info ul {
+    margin: 0;
+    padding: 0;
     list-style: none;
+}
+
+.product-info li {
+    position: relative;
+    padding-left: 23px;
+}
+
+.product-info li::before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 2px;
+    width: 8px;
+    height: 8px;
+    background-color: #000000;
+    transform: rotate(45deg);
 }
 
 .price-tagline {
@@ -507,6 +877,16 @@ a { text-decoration: none; }
     margin: 0;
     margin-left: auto;
     text-align: center;
+}
+
+.footer-copyright b {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.footer-copyright .button {
+    display: block;
+    margin-right: 0;
 }
 
 .footer-copyright .button:hover,
