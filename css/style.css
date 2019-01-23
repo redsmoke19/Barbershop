@@ -592,6 +592,10 @@ input[type="radio"].visually-hidden {
     line-height: 18px;
 }
 
+.catalog-item h3:hover {
+    color: #663d15;
+}
+
 .catalog-category {
     display: block;
     text-transform: none;
@@ -608,9 +612,15 @@ input[type="radio"].visually-hidden {
     margin-bottom: 63px;
 }
 
+.catalog-item-price {
+    display: flex;
+    margin: 15px;
+    margin-top: 0;
+}
+
 .catalog-item-price b {
     width: 112px;
-    padding: 13px 36px 11px 36px;
+    padding: 13px 25px 11px;
     font-size: 14px;
     line-height: 20px;
     text-align: center;
@@ -619,9 +629,11 @@ input[type="radio"].visually-hidden {
 }
 
 .catalog-item-price .button {
-    padding-left: 17px;
-    padding-right: 17px;
+    width: 50px;
+    padding: 13px 18px 11px;
     margin-right: 0;
+    line-height: 20px;
+    color: #ffffff;
 }
 
 .pagination-list {
@@ -713,12 +725,6 @@ input[type="radio"].visually-hidden {
 
 .product-info .product-text {
     margin-bottom: 35px;
-}
-
-.catalog-item-price b {
-    line-height: 20px;
-    text-align: center;
-    background-color: #e5e5e5;
 }
 
 .price-column {
