@@ -458,6 +458,8 @@ input[type="radio"].visually-hidden {
     justify-content: space-between;
 }
 
+/* Filter */
+
 .filter {
     width: 180px;
 }
