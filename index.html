@@ -171,7 +171,7 @@
             <label class="visually-hidden" for="user-login">Логин</label>
             <input class="login-icon-user" type="text" id="user-login" name="login" placeholder="Логин">
         </p>
-        <p>
+        <p class="modal-description">
             <label class="visually-hidden" for="user-password">Пароль</label>
             <input class="login-icon-password" type="password" id="user-password" name="password" placeholder="Пароль">
         </p>
@@ -189,11 +189,14 @@
 </section>
 <section class="modal modal-map">
     <h2 class="visually-hidden">Как до нас добраться</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1878.5744376936495!2d50.18223701136512!3d53.24289911236784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1550684922015" width="766" height="560" frameborder="0" style="border:0" allowfullscreen></iframe>
     <p>
-        <img src="img/map.jpg" width="766" height="560"
+        <img class="visually-hidden" src="img/map.jpg" width="766" height="560"
              alt="Офис компании по адресу ул. Большая Конюшенная 19/8, Санкт-Петербург">
     </p>
     <button class="modal-close" type="button">Закрыть</button>
 </section>
+<script src="js/popup.js"></script>
+<script src="js/map.js"></script>
 </body>
 </html>
